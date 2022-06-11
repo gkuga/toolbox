@@ -1,1 +1,5 @@
 # toolbox
+
+```sh
+ss -nltu
+```
