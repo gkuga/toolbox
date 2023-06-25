@@ -2,6 +2,6 @@
 Start db for local testing.
 
 ```sh
-initdb -D .
+initdb --auth=trust -D .
 pg_ctl -D . -l logfile start
 ```
