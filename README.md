@@ -11,3 +11,8 @@ svg auto width and height resizing
    <path d="M0 0 L100 0 L50 100 Z" />
 </svg>
 ```
+
+list npm packages from locked files
+```
+cat package-lock.json | jq -r '.packages | keys[] as $k | "\($k), \(.[$k] | .version)"'
+```
