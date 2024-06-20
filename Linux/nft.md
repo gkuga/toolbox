@@ -1,0 +1,4 @@
+
+```
+nft list ruleset
+```
