@@ -12,3 +12,7 @@ Valid options are:
  -hex                Hex encode output
  -engine val         Use engine, possibly a hardware device
 ```
+
+```console
+openssl s_client -connect <domain> -showcerts
+```
