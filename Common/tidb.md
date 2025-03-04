@@ -21,3 +21,7 @@ Check Table Before Drop: false
 Store: tikv
 1 row in set (0.02 sec)
 ```
+
+```
+ SELECT user, host, db, command, time, state FROM INFORMATION_SCHEMA.PROCESSLIST;
+```
