@@ -25,3 +25,7 @@ Store: tikv
 ```
  SELECT user, host, db, command, time, state FROM INFORMATION_SCHEMA.PROCESSLIST;
 ```
+
+```
+SELECT @@global.time_zone, @@session.time_zone, @@global.system_time_zone;
+```
