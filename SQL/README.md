@@ -46,4 +46,6 @@ RENAME TABLE sample_table TO sample_table_backup;
 
 -- 4. 新テーブルを正式にリネーム
 RENAME TABLE new_sample_table TO sample_table;
+
+-- 5. 外部参照の張替え
 ```
