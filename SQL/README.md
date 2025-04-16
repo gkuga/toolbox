@@ -22,3 +22,28 @@ WHERE
 ORDER BY
     (data_length+index_length) DESC;  
 ```
+
+### Recreate Table
+
+```sql
+-- 1. 新しいテーブルを作成
+CREATE TABLE new_sample_table (
+  id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  created_at DATETIME(6) NOT NULL,
+  updated_at DATETIME(6) NOT NULL,
+  name VARCHAR(100) NOT NULL,
+);
+
+-- 2. データを移行
+INSERT INTO new_sample_table
+  (id, created_at, updated_at, name)
+SELECT
+  id, created_at, updated_at, name
+FROM sample_table;
+
+-- 3. 元テーブルをバックアップ・削除
+RENAME TABLE sample_table TO sample_table_backup;
+
+-- 4. 新テーブルを正式にリネーム
+RENAME TABLE new_sample_table TO sample_table;
+```
