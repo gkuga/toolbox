@@ -20,3 +20,13 @@ cat sensors.jsonl | jq -Rr '
 
 cat sensors.csv | q -d , "SELECT C2 id, MAX(C1) FROM - GROUP BY id ORDER BY id" > last_sent.csv
 ```
+
+json -> tsv
+
+```
+jq -r '
+  (keys_unsorted | @tsv),
+  ([.[] | tostring] | @tsv)
+' data.json
+>data.csv
+```
