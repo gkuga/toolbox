@@ -27,6 +27,5 @@ json -> tsv
 jq -r '
   (keys_unsorted | @tsv),
   ([.[] | tostring] | @tsv)
-' data.json
->data.csv
+' data.json > data.csv
 ```
