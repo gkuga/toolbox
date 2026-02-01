@@ -29,3 +29,9 @@ jq -r '
   ([.[] | tostring] | @tsv)
 ' data.json > data.csv
 ```
+
+jsonl -> json
+
+```
+cat xxx.jsonl | jq -s
+```
